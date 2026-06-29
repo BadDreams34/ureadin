@@ -28,7 +28,7 @@ def main():
         while i>=0:
             # print hours mins and seconds bro
             time_format(i)
-            print("\n*60")
+            print("\n"*60)
             i -=1
             time.sleep(1)
 
