@@ -1,2 +1,3 @@
-# networking
+ 
+ :# networking
 - what is dhcp and how does networking work and how all this works ? and static and dynamic ip and mobile network and router
