@@ -1,15 +1,17 @@
 import time
+import os
 import datetime
 print("YOOUR POMO FRIEND")
-
+import pathlib
 # must counts how many pomos i did today and store them in a .txt file UMM
 # and this log should be there always and in this timer i must have the
 # option to make the timer stoop so whenver i stop just log that time
 # and enter the number of minutes for which to keep the timer and also
 # YEAHH ?
 BREAK_MIN = 5
-
+FILE = pathlib.Path(__file__).parent / "files" / "progress.txt"
 mins_foc= 0
+
 
 def main():
     global mins_foc
@@ -28,10 +30,9 @@ def main():
         while i>=0:
             # print hours mins and seconds bro
             time_format(i)
-            print("\n"*60)
+            os.system('clear')
             i -=1
             time.sleep(1)
-
         # just set i = desired t
 
         FOCUS_TIME = t * 60
@@ -39,11 +40,12 @@ def main():
         while mins_foc <=FOCUS_TIME:
             time_format(ft)
             ft -=1
-            print("\n"*60)
+            os.system('clear')
             mins_foc+= 1
+
             time.sleep(1)
 
-        with open("files/progress.txt", "a+") as file:
+        with open(FILE, "a+") as file:
             tim = datetime.datetime.now()
             date_time = tim.strftime("%D, %H:%M:%S")
             file.write(f"{date_time}\n{t} mins\n")
@@ -52,7 +54,7 @@ def main():
     except KeyboardInterrupt:
         print(" You Quitted, Dont worry Your focus minutes has been saved !")
 
-        with open("files/progress.txt", "a+") as file:
+        with open(FILE, "a+") as file:
             tim = datetime.datetime.now()
             date_time = tim.strftime("%D, %H:%M:%S")
             file.write(f"{date_time}\n{mins_foc//60} mins\n")
