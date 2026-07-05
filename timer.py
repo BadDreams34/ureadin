@@ -30,7 +30,7 @@ def main():
         while i>=0:
             # print hours mins and seconds bro
             time_format(i)
-            os.system('clear')
+            print(" "*5) 
             i -=1
             time.sleep(1)
         # just set i = desired t
@@ -40,7 +40,7 @@ def main():
         while mins_foc <=FOCUS_TIME:
             time_format(ft)
             ft -=1
-            os.system('clear')
+            print(" "* 5)
             mins_foc+= 1
 
             time.sleep(1)
